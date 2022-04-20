@@ -4,27 +4,27 @@ import { OpenJTalkArgument } from "./base"
 
 interface VoiceOptionData {
     voice : string
-    pitch : number
-    speed : number
+    pitch? : number
+    speed? : number
 }
 
 export default class VoiceOption {
     values : Omit<OpenJTalkArgument,'ow'>
-	constructor(data: VoiceOptionData, option: Omit<OpenJTalkArgument, 'x'|'m'|'ow'|'p'|'r'>){
+	constructor(data: VoiceOptionData, option?: Omit<OpenJTalkArgument, 'x'|'m'|'ow'|'p'|'r'>){
 		const config = this._getConfigJson()
         this.values = {
             m  : path.join(__dirname, '../voice/' + config.voice[data.voice] + '.htsvoice'),
             x  : path.join(__dirname, '../dic/' + config.dictionary),
-            s  : option.s,
+            s  : option?.s,
             p  : data.pitch,
-            a  : option.a,
-            b  : option.b,
+            a  : option?.a,
+            b  : option?.b,
             r  : data.speed,
-            fm : option.fm,
-            u  : option.u,
-            jm : option.jm,
-            jf : option.jf,
-            z  : option.z
+            fm : option?.fm,
+            u  : option?.u,
+            jm : option?.jm,
+            jf : option?.jf,
+            z  : option?.z
         }
 	}
 	setVoice(voiceName: string){
