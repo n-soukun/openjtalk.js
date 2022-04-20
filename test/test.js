@@ -1,4 +1,4 @@
-const { execute, VoiceOption } = require('../openjtalk')
+const { runOpenJTalk, VoiceOption } = require('../dist/index')
 
 const str = "こんにちわ、これはOpenJTalkによって生成された音声です。"
 
@@ -8,7 +8,7 @@ const option = new VoiceOption({
     speed : 1           // 省略可能
 })
 
-execute(str, option)
+runOpenJTalk(str, option)
 .then(async result=>{
     result.play()
     .then(()=>{

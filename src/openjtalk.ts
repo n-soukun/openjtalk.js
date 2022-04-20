@@ -84,7 +84,7 @@ class Command {
         let result: Array<string> = []
         if(this.args) {
             Object.keys(this.args).forEach(key=>{
-                result.push(key)
+                result.push('-'+key)
                 result.push(this.args![key])
             })
         }
