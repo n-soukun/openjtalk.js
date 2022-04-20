@@ -72,7 +72,7 @@ class Command {
     execute(){
         return new Promise((resolve,reject)=>{
             execFile(this.name, this.getArgs(), {}, (err: Error | null, stdout: string | Buffer, stderr: string | Buffer)=>{
-                if(err) return reject()
+                if(err) return reject(err)
                 resolve({
                     stdout : stdout,
                     stderr : stderr
