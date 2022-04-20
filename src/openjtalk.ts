@@ -9,6 +9,11 @@ const uuid = require('uuid-v4')
 export default function runOpenJTalk (str: string, option: VoiceOption): Promise<ResultAudio>{
 	return new Promise((resolve, reject)=>{
 		try {
+            const tempDirPath = path.join(__dirname, '../temp/')
+            if (!fs.existsSync(tempDirPath)) {
+                fs.mkdirSync(tempDirPath)
+            }
+
 			const wavFileName = path.join(__dirname, '../temp/' + uuid() + '.wav')
 			const txtFileName = path.join(__dirname, '../temp/' + uuid() + '.txt')
 	
