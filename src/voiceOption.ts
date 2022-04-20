@@ -13,8 +13,8 @@ export default class VoiceOption {
 	constructor(data: VoiceOptionData, option: Omit<OpenJTalkArgument, 'x'|'m'|'ow'|'p'|'r'>){
 		const config = this._getConfigJson()
         this.values = {
-            m  : path.join(__dirname, 'voice/' + config.voice[data.voice] + '.htsvoice'),
-            x  : path.join(__dirname, 'dic/' + config.dictionary),
+            m  : path.join(__dirname, '../voice/' + config.voice[data.voice] + '.htsvoice'),
+            x  : path.join(__dirname, '../dic/' + config.dictionary),
             s  : option.s,
             p  : data.pitch,
             a  : option.a,
@@ -29,10 +29,10 @@ export default class VoiceOption {
 	}
 	setVoice(voiceName: string){
 		const config = this._getConfigJson()
-		this.values.m = path.join(__dirname, 'voice/' + config.voice[voiceName] + '.htsvoice')
+		this.values.m = path.join(__dirname, '../voice/' + config.voice[voiceName] + '.htsvoice')
 	}
 	_getConfigJson(){
-		const configPath = path.join(__dirname, 'config.json')
+		const configPath = path.join(__dirname, '../config.json')
 		return JSON.parse(fs.readFileSync(configPath, 'utf8'));
 	}
 }

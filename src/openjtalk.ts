@@ -4,13 +4,13 @@ import VoiceOption from "./voiceOption"
 import { execFile } from 'child_process'
 import fs from 'fs'
 import path from 'path'
-import uuid from 'uuid-v4'
+const uuid = require('uuid-v4')
 
-export default function runOpenJTalk (str: string, option: VoiceOption){
+export default function runOpenJTalk (str: string, option: VoiceOption): Promise<ResultAudio>{
 	return new Promise((resolve, reject)=>{
 		try {
-			const wavFileName = path.join(__dirname, 'temp/' + uuid() + '.wav')
-			const txtFileName = path.join(__dirname, 'temp/' + uuid() + '.txt')
+			const wavFileName = path.join(__dirname, '../temp/' + uuid() + '.wav')
+			const txtFileName = path.join(__dirname, '../temp/' + uuid() + '.txt')
 	
             const command = new Command('open_jtalk')
 			const options: OpenJTalkArgument = option.values
@@ -66,7 +66,7 @@ class Command {
     }
     execute(){
         return new Promise((resolve,reject)=>{
-            execFile(this.name, this.getArgs(), (err: Error, stdout: string | Buffer, stderr: string | Buffer)=>{
+            execFile(this.name, this.getArgs(), {}, (err: Error | null, stdout: string | Buffer, stderr: string | Buffer)=>{
                 if(err) return reject()
                 resolve({
                     stdout : stdout,
@@ -99,7 +99,7 @@ class ResultAudio {
 	}
 	play(): Promise<void>{
 		return new Promise((resolve, reject)=>{
-			execFile('afplay', [this.wavFilePath],(err: Error)=>{
+			execFile('afplay', [this.wavFilePath], {} ,(err: Error | null)=>{
 				if(err) return reject()
 				resolve()
 			})
