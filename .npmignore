@@ -2,3 +2,4 @@
 /temp/*
 /src
 tsconfig.json
+.gitgnore
