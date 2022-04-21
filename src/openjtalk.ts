@@ -1,7 +1,6 @@
 import fs from 'fs'
 import path from 'path'
 const uuid = require('uuid-v4')
-
 import VoiceOption, { OpenJTalkArgument } from "./voiceOption"
 import Command from './command'
 import ResultAudio from "./resultAudio"

@@ -5,11 +5,11 @@ const str = "こんにちわ、これはOpenJTalkによって生成された音�
 const option = new VoiceOption({
     voice : "mei_normal", // 必須オプション
     pitch : 200,          // 省略可能
-    speed : 1           // 省略可能
+    speed : 1             // 省略可能
 })
 
 runOpenJTalk(str, option)
-.then(async result=>{
+.then(result=>{
     result.play()
     .then(()=>{
         result.close()

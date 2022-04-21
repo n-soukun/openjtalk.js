@@ -14,10 +14,10 @@ export default class Command {
         }
         return false
     }
-    setValue(value: string){
+    setValue(value: string): void{
         this.value = String(value)
     }
-    execute(){
+    execute(): Promise<{stdout: string | Buffer,stderr: string | Buffer}>{
         return new Promise((resolve,reject)=>{
             execFile(this.name, this.getArgs(), {}, (err: Error | null, stdout: string | Buffer, stderr: string | Buffer)=>{
                 if(err) return reject(err)

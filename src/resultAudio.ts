@@ -1,6 +1,6 @@
-import { execFile } from "child_process"
 import { Stream } from "stream"
 import fs from "fs"
+import Command from "./command"
 
 export default class ResultAudio {
     constructor(
@@ -11,10 +11,15 @@ export default class ResultAudio {
 	}
 	play(): Promise<void>{
 		return new Promise((resolve, reject)=>{
-			execFile('afplay', [this.wavFilePath], {} ,(err: Error | null)=>{
-				if(err) return reject()
-				resolve()
-			})
+			const command = getPlayCommand()
+			if(command){
+				command.setValue(this.wavFilePath)
+				command.execute()
+				.then(()=>resolve())
+				.catch(reject)
+			}else{
+				return reject("Playback on this OS is not supported.")
+			}
 		})
 	}
     close(): Promise<void>{
@@ -25,4 +30,15 @@ export default class ResultAudio {
 			})
         })
     }
+}
+
+function getPlayCommand(): Command | null{
+	switch (process.platform) {
+		case "darwin":
+			return new Command('afplay')
+		case "linux":
+			return new Command('aplay')
+		default:
+			return null
+	}
 }
