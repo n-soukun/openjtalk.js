@@ -24,7 +24,7 @@ interface VoiceOptionData {
     speed? : number
 }
 
-export default class VoiceOption {
+export class VoiceOption {
     values : Omit<OpenJTalkArgument,'ow'>
 	constructor(data: VoiceOptionData, option?: Omit<OpenJTalkArgument, 'x'|'m'|'ow'|'p'|'r'>){
 		const config = this._getConfigJson()

@@ -1,12 +1,11 @@
-import { Stream } from "stream"
 import fs from "fs"
-import Command from "./command"
+import { Command } from "./command"
 
-export default class ResultAudio {
+export class ResultAudio {
     constructor(
         public wavFilePath: string
     ){}
-	get(): Stream{
+	get(): fs.ReadStream{
 		return fs.createReadStream(this.wavFilePath)
 	}
 	play(): Promise<void>{

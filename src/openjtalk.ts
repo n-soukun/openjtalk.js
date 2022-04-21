@@ -1,11 +1,11 @@
 import fs from 'fs'
 import path from 'path'
 const uuid = require('uuid-v4')
-import VoiceOption, { OpenJTalkArgument } from "./voiceOption"
-import Command from './command'
-import ResultAudio from "./resultAudio"
+import {VoiceOption, OpenJTalkArgument } from "./voiceOption"
+import { Command } from './command'
+import { ResultAudio } from "./resultAudio"
 
-export default function runOpenJTalk (str: string, option: VoiceOption | OpenJTalkArgument): Promise<ResultAudio>{
+export function runOpenJTalk (str: string, option: VoiceOption | OpenJTalkArgument): Promise<ResultAudio>{
 	return new Promise((resolve, reject)=>{
 		try {
             const tempDirPath = path.join(__dirname, '../temp/')

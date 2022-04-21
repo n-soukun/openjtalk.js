@@ -1,6 +1,6 @@
 import { execFile } from "child_process";
 
-export default class Command {
+export class Command {
     constructor(
         public name: string,
         private args?: {[key: string]: string;},
