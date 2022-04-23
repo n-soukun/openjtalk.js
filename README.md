@@ -17,9 +17,9 @@ const { runOpenJTalk, VoiceOption } = require('openjtalk.js')
 const str = "こんにちわ、これはOpenJTalkによって生成された音声です。"
 
 const option = new VoiceOption({
-    voice : "mei_normal", // required
-    pitch : 200,          // optional
-    speed : 1             // optional
+    speaker : "mei_normal", // required
+    pitch : 200,            // optional
+    speed : 1               // optional
 })
 
 runOpenJTalk(str, option)

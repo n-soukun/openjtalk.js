@@ -19,7 +19,7 @@ export interface OpenJTalkArgument {
 }
 
 interface VoiceOptionData {
-    voice : string
+    speaker : string
     pitch? : number
     speed? : number
 }
@@ -29,7 +29,7 @@ export class VoiceOption {
 	constructor(data: VoiceOptionData, option?: Omit<OpenJTalkArgument, 'x'|'m'|'ow'|'p'|'r'>){
 		const config = this._getConfigJson()
         this.values = {
-            m  : path.join(__dirname, '../voice/' + config.voice[data.voice] + '.htsvoice'),
+            m  : path.join(__dirname, '../voice/' + config.speaker[data.speaker] + '.htsvoice'),
             x  : path.join(__dirname, '../dic/' + config.dictionary),
             s  : option?.s,
             p  : data.pitch,
@@ -43,9 +43,9 @@ export class VoiceOption {
             z  : option?.z
         }
 	}
-	setVoice(voiceName: string){
+	setVoice(speaker: string){
 		const config = this._getConfigJson()
-		this.values.m = path.join(__dirname, '../voice/' + config.voice[voiceName] + '.htsvoice')
+		this.values.m = path.join(__dirname, '../voice/' + config.speaker[speaker] + '.htsvoice')
 	}
 	_getConfigJson(){
 		const configPath = path.join(__dirname, '../config.json')
