@@ -22,13 +22,10 @@ const option = new VoiceOption({
     speed : 1               // optional
 })
 
-runOpenJTalk(str, option)
-.then(result=>{
-    result.play() // For MacOS or Linux
-    .then(()=>{
-        result.close()
-    })
-})
+
+const openjtalk = new OpenJTalk()
+
+openjtalk.talk(str, option) // For MacOS or Linux
 .catch(console.error)
 ```
 
