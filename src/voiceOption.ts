@@ -22,6 +22,7 @@ interface VoiceOptionData {
     speaker : string
     pitch? : number
     speed? : number
+    allPass?: number
 }
 
 export class VoiceOption {

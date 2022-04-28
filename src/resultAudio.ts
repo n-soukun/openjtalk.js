@@ -13,7 +13,7 @@ export class ResultAudio {
 			const command = getPlayCommand()
 			if(command){
 				command.setValue(this.wavFilePath)
-				command.execute()
+				command.exec()
 				.then(()=>resolve())
 				.catch(reject)
 			}else{
