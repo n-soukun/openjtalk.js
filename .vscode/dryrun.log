@@ -1,0 +1,16 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/soushi/workspace/openjtalk.js'
+cd /Users/soushi/workspace/openjtalk.js/lib/hts_engine_API-1.10/ && \
+	./configure && \
+	make && \
+	make install
+cd /Users/soushi/workspace/openjtalk.js/lib/open_jtalk-1.11/ && \
+	./configure --with-charset=UTF-8 \
+		--with-hts-engine-header-path=/Users/soushi/workspace/openjtalk.js/lib/hts_engine_API-1.10//include \
+		--with-hts-engine-library-path=/Users/soushi/workspace/openjtalk.js/lib/hts_engine_API-1.10//lib && \
+	make && \
+	make install
+mkdir -p /Users/soushi/workspace/openjtalk.js/bin
+cp /Users/soushi/workspace/openjtalk.js/lib/open_jtalk-1.11//bin/open_jtalk /Users/soushi/workspace/openjtalk.js/bin/.
+make: Leaving directory `/Users/soushi/workspace/openjtalk.js'
+ 
