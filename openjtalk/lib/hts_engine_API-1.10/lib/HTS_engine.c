@@ -692,8 +692,7 @@ void HTS_Engine_save_generated_speech(HTS_Engine * engine, FILE * fp)
          temp = -32768;
       else
          temp = (short) x;
-      //fwrite(&temp, sizeof(short), 1, fp);
-      fprintf(stdout, "%p", &temp);
+      fwrite(&temp, sizeof(short), 1, fp);
    }
 }
 
