@@ -1,0 +1,10 @@
+{
+    "dictionary" : "open_jtalk_dic_utf_8-1.11",
+    "speaker" : {
+        "mei_angry" : "mei/mei_angry",
+        "mei_bashful" : "mei/mei_bashful",
+        "mei_happy" : "mei/mei_happy",
+        "mei_normal" : "mei/mei_normal",
+        "mei_sad" : "mei/mei_sad"
+    }
+}
