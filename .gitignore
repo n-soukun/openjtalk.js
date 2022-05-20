@@ -1,7 +1,0 @@
-/node_modules
-/temp/*
-/dist
-*.o
-*.a
-config.log
-/.vscode
