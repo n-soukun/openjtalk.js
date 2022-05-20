@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build",
-    "test": "node test/test"
+    "test": "node test/talk"
   },
   "repository": {
     "type": "git",

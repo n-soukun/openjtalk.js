@@ -64,6 +64,7 @@ export function execCommands(commands: Command[]): CommandsResult{
     for (let i = 0; i < commands.length; i++) {
         processes[i].stderr.on('data', (data) => {
             stderr.push(data)
+            console.error(data)
         })
     }
     processes[commands.length - 1].stdout.on("close",()=>{
