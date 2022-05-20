@@ -8,7 +8,7 @@ import { Readable } from 'stream'
 export class OpenJTalk {
     public readonly command
     constructor(){
-        this.command = path.join(__dirname, "../openjtalk/bin/open_jtalk")
+        this.command = path.join(__dirname, "../bin/open_jtalk")
     }
     outFile(str: string, config: VoiceOption | OpenJTalkArgument, wavPath: string): Promise<void>{
         return new Promise((resolve, reject)=>{
