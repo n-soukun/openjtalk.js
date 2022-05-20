@@ -1,4 +1,4 @@
-import fs from 'fs'
+import fs, { read } from 'fs'
 import path from 'path'
 const uuid = require('uuid-v4')
 import {VoiceOption, OpenJTalkArgument } from "./voiceOption"
@@ -6,14 +6,14 @@ import { Command, execCommands } from './command'
 import { Readable } from 'stream'
 
 export class OpenJTalk {
-    constructor(
-        public com?: string
-    ){}
+    public readonly command
+    constructor(){
+        this.command = path.join(__dirname, "../openjtalk/bin/open_jtalk")
+    }
     outFile(str: string, config: VoiceOption | OpenJTalkArgument, wavPath: string): Promise<void>{
         return new Promise((resolve, reject)=>{
             try {
-                const comName = this.com ? this.com : "./openjtalk/bin/open_jtalk"
-                const commands = getCommands(str, comName, config, wavPath)
+                const commands = getCommands(str, this.command, config, wavPath)
                 const result = execCommands(commands)
                 result.stdout.on('close', ()=>{
                     resolve()
@@ -24,8 +24,7 @@ export class OpenJTalk {
         })
     }
     stream(str: string, config: VoiceOption | OpenJTalkArgument): Readable{
-        const comName = "./openjtalk/bin/open_jtalk"
-        const commands = getCommands(str, comName, config)
+        const commands = getCommands(str, this.command, config)
         const result = execCommands(commands)
         return result.stdout
     }
