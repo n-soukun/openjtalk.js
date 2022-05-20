@@ -15,9 +15,6 @@ export class OpenJTalk {
             try {
                 const commands = getCommands(str, this.command, config, wavPath)
                 const result = execCommands(commands)
-                result.stderr.on("data",(data)=>{
-                    console.error(data)
-                })
                 result.stdout.on('close', ()=>{
                     resolve()
                 })
@@ -29,9 +26,6 @@ export class OpenJTalk {
     stream(str: string, config: VoiceOption | OpenJTalkArgument): Readable{
         const commands = getCommands(str, this.command, config)
         const result = execCommands(commands)
-        result.stderr.on("data",(data)=>{
-            console.error(data)
-        })
         return result.stdout
     }
     talk(str: string, config: VoiceOption | OpenJTalkArgument): Promise<void>{
