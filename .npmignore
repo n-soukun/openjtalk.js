@@ -6,4 +6,4 @@ tsconfig.json
 *.o
 *.a
 config.log
-/.vscode
+.vscode
