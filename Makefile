@@ -8,16 +8,14 @@ all: htsengine openjtalk
 htsengine:
 	cd $(HTSENGINE_DIR) && \
 	./configure && \
-	make && \
-	make install
+	make
 
 openjtalk:
 	cd $(OPENJTALK_DIR) && \
 	./configure --with-charset=UTF-8 \
 		--with-hts-engine-header-path=$(HTSENGINE_DIR)/include \
 		--with-hts-engine-library-path=$(HTSENGINE_DIR)/lib && \
-	make && \
-	make install
+	make
 	mkdir -p $(MODULE_DIR)/bin
 	cp $(OPENJTALK_DIR)/bin/open_jtalk $(MODULE_DIR)/bin/.
 
