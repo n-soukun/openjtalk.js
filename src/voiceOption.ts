@@ -22,7 +22,7 @@ interface VoiceOptionData {
     speaker : string
     pitch? : number
     speed? : number
-    allPass?: number
+    voiceQuality?: number
     intonation?: number
 }
 
@@ -35,7 +35,7 @@ export class VoiceOption {
             x  : path.join(__dirname, '../dic/' + config.dictionary),
             s  : option?.s,
             p  : option?.p,
-            a  : data.allPass,
+            a  : data.voiceQuality,
             b  : option?.b,
             r  : data.speed,
             fm : data.pitch,
