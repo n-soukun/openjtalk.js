@@ -10,7 +10,6 @@ OpenJTalk.js is a library of OpenJTalk commands made easy to use in node.js.
 ``` shell
 $ npm i openjtalk.js
 ```
-(*) For other operating systems, download and build Open Jtalk and pass it through.
 # Usage
 ``` javascript
 const { OpenJTalk, VoiceOption } = require('openjtalk.js')
