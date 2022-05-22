@@ -2,11 +2,12 @@
 OpenJTalk.js is a library of OpenJTalk commands made easy to use in node.js.
 
 # Requirement
-`Open JTalk`
+* MacOS or Linux
+* Node.js
+* Open JTalk
 
 # Installation
 ``` shell
-$ brew install openjtalk # For MacOS(*)
 $ npm i openjtalk.js
 ```
 (*) For other operating systems, download and build Open Jtalk and pass it through.
@@ -26,7 +27,7 @@ const option = new VoiceOption({
     intonation: 1,          //optional
 })
 
-openjtalk.talk(str, option) // For MacOS or Linux
+openjtalk.talk(str, option)
     .catch(console.error)
 ```
 
