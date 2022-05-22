@@ -12,7 +12,7 @@ $ npm i openjtalk.js
 (*) For other operating systems, download and build Open Jtalk and pass it through.
 # Usage
 ``` javascript
-const { OpenJTalk, VoiceOption } = require('../dist/index')
+const { OpenJTalk, VoiceOption } = require('openjtalk.js')
 
 const openjtalk = new OpenJTalk()
 
