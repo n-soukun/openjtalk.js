@@ -12,20 +12,22 @@ $ npm i openjtalk.js
 (*) For other operating systems, download and build Open Jtalk and pass it through.
 # Usage
 ``` javascript
-const { OpenJTalk, VoiceOption } = require('openjtalk.js')
+const { OpenJTalk, VoiceOption } = require('../dist/index')
+
+const openjtalk = new OpenJTalk()
 
 const str = "こんにちわ、これはOpenJTalkによって生成された音声です。"
 
 const option = new VoiceOption({
-    speaker : "mei_normal", // required
-    pitch : 200,            // optional
-    speed : 1               // optional
+    speaker : "mei_normal", //required
+    voiceQuality: 0.55,     //optional
+    pitch : 0,              //optional
+    speed : 1,              //optional
+    intonation: 1,          //optional
 })
 
-const openjtalk = new OpenJTalk()
-
 openjtalk.talk(str, option) // For MacOS or Linux
-.catch(console.error)
+    .catch(console.error)
 ```
 
 # License
