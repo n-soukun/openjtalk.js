@@ -4,7 +4,6 @@ OpenJTalk.js is a library of OpenJTalk commands made easy to use in node.js.
 # Requirement
 * MacOS or Linux
 * Node.js
-* Open JTalk
 
 # Installation
 ``` shell
