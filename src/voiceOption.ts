@@ -27,7 +27,7 @@ interface VoiceOptionData {
 
 export class VoiceOption {
     values : Omit<OpenJTalkArgument,'ow'>
-	constructor(data: VoiceOptionData, option?: Omit<OpenJTalkArgument, 'x'|'m'|'ow'|'p'|'r'>){
+	constructor(data: VoiceOptionData, option?: Omit<OpenJTalkArgument, 'x'|'m'|'ow'|'p'|'fm'>){
 		const config = this._getConfigJson()
         this.values = {
             m  : path.join(__dirname, '../voice/' + config.speaker[data.speaker] + '.htsvoice'),
@@ -36,8 +36,8 @@ export class VoiceOption {
             p  : data.pitch,
             a  : option?.a,
             b  : option?.b,
-            r  : data.speed,
-            fm : option?.fm,
+            r  : option?.r,
+            fm : data.speed,
             u  : option?.u,
             jm : option?.jm,
             jf : option?.jf,
