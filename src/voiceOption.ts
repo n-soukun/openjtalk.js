@@ -27,17 +27,17 @@ interface VoiceOptionData {
 
 export class VoiceOption {
     values : Omit<OpenJTalkArgument,'ow'>
-	constructor(data: VoiceOptionData, option?: Omit<OpenJTalkArgument, 'x'|'m'|'ow'|'p'|'fm'>){
+	constructor(data: VoiceOptionData, option?: Omit<OpenJTalkArgument, 'x'|'m'|'ow'|'fm'|'r'>){
 		const config = this._getConfigJson()
         this.values = {
             m  : path.join(__dirname, '../voice/' + config.speaker[data.speaker] + '.htsvoice'),
             x  : path.join(__dirname, '../dic/' + config.dictionary),
             s  : option?.s,
-            p  : data.pitch,
+            p  : option?.p,
             a  : option?.a,
             b  : option?.b,
-            r  : option?.r,
-            fm : data.speed,
+            r  : data.speed,
+            fm : data.pitch,
             u  : option?.u,
             jm : option?.jm,
             jf : option?.jf,
