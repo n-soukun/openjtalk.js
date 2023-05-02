@@ -1,6 +1,6 @@
 # OpenJTalk.js: A TTS module with OpenJTalk for Node.js
 OpenJTalk.jsは、OpenJTalkのコマンドをNode.jsで扱いやすくするためのライブラリです。
-<br><br>Sorry, this readme is Japanese only. Please translation with your browser or [Google Translation](https://translate.google.com/translate?sl=auto&tl=en&u=https://github.com/n-soukun/openjtalk.js).
+<br><br>Sorry, this readme is Japanese only. Please translation with your browser or [Google Translation](https://translate.google.com/translate?sl=auto&tl=en&u=https://github.com/n-soukun/openjtalk.js#readme).
 
 # 動作環境
 * MacOS or Linux
