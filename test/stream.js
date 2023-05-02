@@ -1,23 +1,23 @@
-const { OpenJTalk, VoiceOption } = require('../dist/index')
+const openjtalk = require('../dist/index')
 const fs = require('fs')
 const { execFile } = require('child_process')
 const path = require('path')
 
 //生成する音声の原稿
-const str = "こんにちわ、これはOpenJTalkによって生成された音声です。"
+const text = "こんにちは、これはOpenJTalkによって生成された音声です。"
+
+//HTSボイスファイルのパスを取得
+const mei_normal = openjtalk.getSpeaker("mei_normal")
 
 //オプションの設定
-const option = new VoiceOption({
-    speaker : "mei_normal", // 必須オプション
-    pitch : 200,            // 省略可能
-    speed : 1               // 省略可能
-})
-
-//インスタンスの作成
-const openjtalk = new OpenJTalk()
+const option = {
+    speaker : mei_normal,
+    pitch : 200,
+    speed : 1
+}
 
 //ストリームの取得
-const audioStream = openjtalk.stream(str, option)
+const audioStream = openjtalk.stream(text, option)
 
 //音声ファイルの生成
 const wavPath = path.join(__dirname, "./test.wav")
