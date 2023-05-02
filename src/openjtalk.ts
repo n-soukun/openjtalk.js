@@ -9,7 +9,7 @@ const OPENJTALK_PATH = path.join(__dirname, "../bin/open_jtalk")
 const config = JSON.parse(fs.readFileSync(path.join(__dirname, '../openjtalk.json'), 'utf8'))
 
 export const DEFAULT_DICTIONARY_PATH = path.join(__dirname, '../dic/', config.dictionary)
-export const DEFAULT_SPEAKER_PATH = path.join(__dirname, '../voice/', config.speaker.mei_normal)
+export const DEFAULT_SPEAKER_PATH = path.join(__dirname, '../voice/' + config.speaker.mei_normal + '.htsvoice')
 
 export interface OJTVoiceOption {
     speaker?: string      // -m
@@ -19,7 +19,7 @@ export interface OJTVoiceOption {
     postFilter?: number   // -b
     speed?: number        // -r
     pitch?: number        // -fm
-    uvThreshold?: number    // -u
+    uvThreshold?: number  // -u
     spectrum?: number     // -jm
     intonation?: number   // -jf
     volume?: number       // -g
@@ -118,6 +118,7 @@ export async function outFile(text: string, wavPath: string, voiceOption?: OJTVo
         voice: voiceOption,
         output: {path: wavPath}
     }
+    console.log(option)
     const commands = getOJTCommands(text, createOJTArgs(option))
     const result = execCommands(commands)
     await new Promise<void>((resolve,_)=>result.stdout.on('close', ()=>resolve()))
