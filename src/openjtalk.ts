@@ -1,6 +1,6 @@
 import path from "path"
 import fs from "fs"
-import { Command, execCommands } from "./command"
+import { Command, CommandsResult, execCommands } from "./command"
 import { Readable } from "stream"
 const uuid = require('uuid-v4')
 
@@ -113,30 +113,30 @@ export function getSpeaker(name: string): string | undefined{
     return path.join(__dirname, '../voice/' + config.speaker[name] + '.htsvoice')
 }
 
+export function execute(text: string, option: OJTOption): CommandsResult{
+    const commands = getOJTCommands(text, createOJTArgs(option))
+    return execCommands(commands)
+}
+
 export async function outFile(text: string, wavPath: string, voiceOption?: OJTVoiceOption,): Promise<void>{
     const option: OJTOption = {
         voice: voiceOption,
         output: {path: wavPath}
     }
-    console.log(option)
-    const commands = getOJTCommands(text, createOJTArgs(option))
-    const result = execCommands(commands)
+    const result = execute(text, option)
     await new Promise<void>((resolve,_)=>result.stdout.on('close', ()=>resolve()))
 }
 
 export function stream(text: string, voiceOption?: OJTVoiceOption): Readable{
-    const commands = getOJTCommands(text, createOJTArgs({voice: voiceOption}))
-    const result = execCommands(commands)
+    const result = execute(text, {voice: voiceOption})
     return result.stdout
 }
 
 export async function talk(text: string, voiceOption?: OJTVoiceOption): Promise<void>{
     const play = getPlayCommand()
     if(!play) throw new Error("Playback on this OS is not supported.").stack
-
     const tempDir = path.join(__dirname, '../temp')
     if (!fs.existsSync(tempDir)) fs.mkdirSync(tempDir)
-
     const wavPath = path.join(__dirname, '../temp/' + uuid() + '.wav')
     await outFile(text, wavPath, voiceOption)
     play.setValue(wavPath)
