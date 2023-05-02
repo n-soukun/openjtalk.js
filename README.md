@@ -11,21 +11,19 @@ $ npm i openjtalk.js
 ```
 # Usage
 ``` javascript
-const { OpenJTalk, VoiceOption } = require('openjtalk.js')
+const openjtalk = require('openjtalk.js')
 
-const openjtalk = new OpenJTalk()
+const text = "こんにちは、これはOpenJTalkによって生成された音声です。"
 
-const str = "こんにちわ、これはOpenJTalkによって生成された音声です。"
+const option = {
+    speaker : "mei_normal",
+    voiceQuality: 0.55,
+    pitch : 0,
+    speed : 1,
+    intonation: 1,
+}
 
-const option = new VoiceOption({
-    speaker : "mei_normal", //required
-    voiceQuality: 0.55,     //optional
-    pitch : 0,              //optional
-    speed : 1,              //optional
-    intonation: 1,          //optional
-})
-
-openjtalk.talk(str, option)
+openjtalk.talk(text, option)
     .catch(console.error)
 ```
 
