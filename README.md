@@ -25,7 +25,7 @@ const openjtalk = require('openjtalk.js')
 const text = "こんにちは、これはOpenJTalkによって生成された音声です。"
 
 //デフォルトで搭載されているHTSボイスファイルのパスを取得
-const mei_normal = getSpeaker("mei_normal")
+const mei_normal = openjtalk.getSpeaker("mei_normal")
 
 const option = {
     speaker : mei_normal, //ここにはHTSボイスファイルのパスを指定します
