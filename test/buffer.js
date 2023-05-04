@@ -19,15 +19,12 @@ const option = {
 }
 
 //ストリームの取得
-const audioStream = openjtalk.stream(text, option)
+openjtalk.buffer(text, option)
+.then(buffer => {
+    //音声ファイルの生成
+    const wavPath = path.join(__dirname, "./test.wav")
+    fs.writeFileSync(wavPath, buffer)
 
-//音声ファイルの生成
-const wavPath = path.join(__dirname, "./test.wav")
-const outFile = fs.createWriteStream(wavPath)
-audioStream.pipe(outFile)
-
-//音声ファイルの生成が終了すると実行
-audioStream.on("close", ()=>{
     switch (process.platform) {
         case "darwin":
             playAndRefresh("afplay", wavPath)

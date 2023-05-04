@@ -37,7 +37,7 @@ export interface OJTOption {
     output?: OJTOutputOption
 }
 
-export interface OJTArgument {
+interface OJTArgument {
     x : string
     m : string
     ow? : string
@@ -108,16 +108,33 @@ function getPlayCommand(): Command | null{
 	}
 }
 
+/**
+ * HTSボイスファイルのパスを取得
+ * @param name 話者の名前
+ * @returns HTSボイスファイルのフルパス
+ */
 export function getSpeaker(name: string): string | undefined{
     if(!config.speaker[name]) return undefined
     return path.join(__dirname, '../voice/' + config.speaker[name] + '.htsvoice')
 }
 
+/**
+ * OpenJTalkを実行
+ * @param text 生成する音声の原稿
+ * @param option 生成する音声の設定
+ * @returns コンソールの実行結果
+ */
 export function execute(text: string, option: OJTOption): CommandsResult{
     const commands = getOJTCommands(text, createOJTArgs(option))
     return execCommands(commands)
 }
 
+/**
+ * 音声ファイルを出力
+ * @param text 生成する音声の原稿
+ * @param wavPath 音声ファイルの出力場所
+ * @param voiceOption 生成する音声の設定
+ */
 export async function outFile(text: string, wavPath: string, voiceOption?: OJTVoiceOption,): Promise<void>{
     const option: OJTOption = {
         voice: voiceOption,
@@ -127,11 +144,41 @@ export async function outFile(text: string, wavPath: string, voiceOption?: OJTVo
     await new Promise<void>((resolve,_)=>result.stdout.on('close', ()=>resolve()))
 }
 
+/**
+ * ストリームを取得
+ * @param text 生成する音声の原稿
+ * @param voiceOption 生成する音声の設定
+ * @returns 音声データのストリーム
+ */
 export function stream(text: string, voiceOption?: OJTVoiceOption): Readable{
     const result = execute(text, {voice: voiceOption})
     return result.stdout
 }
 
+/**
+ * バイナリデータを取得
+ * @param text 生成する音声の原稿
+ * @param voiceOption 生成する音声の設定
+ * @returns 音声のバイナリデータ
+ */
+export function buffer(text: string, voiceOption?: OJTVoiceOption): Promise<Buffer>{
+    return new Promise<Buffer>((resolve, reject)=>{
+        try {
+            const stream = execute(text, {voice: voiceOption}).stdout
+            const data:Uint8Array[] = []
+            stream.on("data", chank=>data.push(chank))
+            stream.on("close", ()=>resolve(Buffer.concat(data)))
+        } catch (error) {
+            reject(error)
+        }
+    })
+}
+
+/**
+ * 音声を生成して再生
+ * @param text 生成する音声の原稿
+ * @param voiceOption 生成する音声の設定
+ */
 export async function talk(text: string, voiceOption?: OJTVoiceOption): Promise<void>{
     const play = getPlayCommand()
     if(!play) throw new Error("Playback on this OS is not supported.").stack
