@@ -163,7 +163,10 @@ function getPlayCommand(): Command | null {
         case 'linux':
             return new Command('aplay');
         default:
-            return null;
+            const ffplay = new Command('ffplay');
+            ffplay.setArg('autoexit', '');
+            ffplay.setArg('nodisp', '');
+            return ffplay;
     }
 }
 

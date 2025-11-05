@@ -9,7 +9,7 @@ export class Command {
     ) {}
     setArg(key: string, value: any): boolean {
         if (!this.args) this.args = {};
-        if (value) {
+        if (typeof value !== 'undefined') {
             this.args[key] = String(value);
             return true;
         }
@@ -43,7 +43,10 @@ export class Command {
         if (this.args) {
             Object.keys(this.args).forEach((key) => {
                 result.push('-' + key);
-                result.push(this.args![key]);
+                const value = String(this.args![key]);
+                if (value.length > 0) {
+                    result.push(value);
+                }
             });
         }
         if (this.value) {
