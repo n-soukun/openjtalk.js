@@ -6,3 +6,4 @@
 config.log
 .vscode
 .DS_Store
+/bin

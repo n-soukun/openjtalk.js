@@ -1,31 +1,33 @@
 {
-  "name": "openjtalk.js",
-  "version": "2.0.1",
-  "description": "",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "tsc",
-    "prepare": "npm run build",
-    "test": "node test/talk",
-    "install": "make"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/n-soukun/openjtalk.js.git"
-  },
-  "author": "soukun",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/n-soukun/openjtalk.js/issues"
-  },
-  "dependencies": {
-    "tslib": "^2.4.0",
-    "typescript": "^4.6.3",
-    "uuid-v4": "^0.1.0"
-  },
-  "homepage": "https://github.com/n-soukun/openjtalk.js#readme",
-  "devDependencies": {
-    "@types/node": "^17.0.25"
-  }
+    "name": "openjtalk.js",
+    "version": "3.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "prepare": "npm run build",
+        "test": "node test/talk",
+        "install": "node install.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/n-soukun/openjtalk.js.git"
+    },
+    "author": "soukun",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/n-soukun/openjtalk.js/issues"
+    },
+    "dependencies": {
+        "iconv-lite": "^0.6.3",
+        "tslib": "^2.4.0",
+        "typescript": "^4.6.3",
+        "uuid-v4": "^0.1.0"
+    },
+    "homepage": "https://github.com/n-soukun/openjtalk.js#readme",
+    "devDependencies": {
+        "@types/node": "^17.0.25",
+        "unzipper": "^0.12.3"
+    }
 }

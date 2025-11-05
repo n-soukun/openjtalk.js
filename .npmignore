@@ -7,3 +7,4 @@ tsconfig.json
 *.a
 config.log
 .vscode
+/bin
