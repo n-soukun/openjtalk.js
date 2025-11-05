@@ -1,10 +1,13 @@
 {
-    "dictionary" : "open_jtalk_dic_utf_8-1.11",
-    "speaker" : {
-        "mei_angry" : "mei/mei_angry",
-        "mei_bashful" : "mei/mei_bashful",
-        "mei_happy" : "mei/mei_happy",
-        "mei_normal" : "mei/mei_normal",
-        "mei_sad" : "mei/mei_sad"
-    }
+  "dictionary": {
+    "utf-8": "open_jtalk_dic_utf_8-1.11",
+    "shift_jis": "open_jtalk_dic_shift_jis-1.11"
+  },
+  "speaker": {
+    "mei_angry": "mei/mei_angry",
+    "mei_bashful": "mei/mei_bashful",
+    "mei_happy": "mei/mei_happy",
+    "mei_normal": "mei/mei_normal",
+    "mei_sad": "mei/mei_sad"
+  }
 }
