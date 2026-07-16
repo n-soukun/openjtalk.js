@@ -8,7 +8,8 @@
         "build": "tsc",
         "prepare": "npm run build",
         "test": "node test/talk",
-        "install": "node install.js"
+        "install": "node install.js",
+        "ci:publish": "pnpm publish -r --no-git-checks --access=public"
     },
     "repository": {
         "type": "git",
@@ -29,6 +30,7 @@
     },
     "homepage": "https://github.com/n-soukun/openjtalk.js#readme",
     "devDependencies": {
+        "@changesets/cli": "^2.31.0",
         "@types/node": "^17.0.25"
     },
     "packageManager": "pnpm@10.25.0+sha512.5e82639027af37cf832061bcc6d639c219634488e0f2baebe785028a793de7b525ffcd3f7ff574f5e9860654e098fe852ba8ac5dd5cefe1767d23a020a92f501"
