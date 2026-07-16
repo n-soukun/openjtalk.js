@@ -8,6 +8,13 @@ on:
 env:
   CI: true
 
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+permissions:
+  contents: write
+  id-token: write
+  pull-requests: write
+
 jobs:
   version:
     timeout-minutes: 15
