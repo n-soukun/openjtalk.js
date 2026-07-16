@@ -1,0 +1,225 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      iconv-lite:
+        specifier: ^0.6.3
+        version: 0.6.3
+      tar:
+        specifier: ^7.5.20
+        version: 7.5.20
+      tslib:
+        specifier: ^2.4.0
+        version: 2.8.1
+      typescript:
+        specifier: ^4.6.3
+        version: 4.9.5
+      unzipper:
+        specifier: ^0.12.3
+        version: 0.12.5
+      uuid-v4:
+        specifier: ^0.1.0
+        version: 0.1.0
+    devDependencies:
+      '@types/node':
+        specifier: ^17.0.25
+        version: 17.0.45
+
+packages:
+
+  '@isaacs/fs-minipass@4.0.1':
+    resolution: {integrity: sha512-wgm9Ehl2jpeqP3zw/7mo3kRHFp5MEDhqAdwy1fTGkHAwnkGOVsgpvQhL8B5n1qlb01jV3n/bI0ZfZp5lWA1k4w==}
+    engines: {node: '>=18.0.0'}
+
+  '@types/node@17.0.45':
+    resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
+
+  bluebird@3.7.2:
+    resolution: {integrity: sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==}
+
+  chownr@3.0.0:
+    resolution: {integrity: sha512-+IxzY9BZOQd/XuYPRmrvEVjF/nqj5kgT4kEq7VofrDoM1MxoRjEWkrCC3EtLi59TVawxTAn+orJwFQcrqEN1+g==}
+    engines: {node: '>=18'}
+
+  core-util-is@1.0.3:
+    resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
+
+  duplexer2@0.1.4:
+    resolution: {integrity: sha512-asLFVfWWtJ90ZyOUHMqk7/S2w2guQKxUI2itj3d92ADHhxUSbCMGi1f1cBcJ7xM1To+pE/Khbwo1yuNbMEPKeA==}
+
+  fs-extra@11.3.1:
+    resolution: {integrity: sha512-eXvGGwZ5CL17ZSwHWd3bbgk7UUpF6IFHtP57NYYakPvHOs8GDgDe5KJI36jIJzDkJ6eJjuzRA8eBQb6SkKue0g==}
+    engines: {node: '>=14.14'}
+
+  graceful-fs@4.2.11:
+    resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
+
+  iconv-lite@0.6.3:
+    resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
+    engines: {node: '>=0.10.0'}
+
+  inherits@2.0.4:
+    resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
+
+  isarray@1.0.0:
+    resolution: {integrity: sha512-VLghIWNM6ELQzo7zwmcg0NmTVyWKYjvIeM83yjp0wRDTmUnrM678fQbcKBo6n2CJEF0szoG//ytg+TKla89ALQ==}
+
+  jsonfile@6.2.1:
+    resolution: {integrity: sha512-zwOTdL3rFQ/lRdBnntKVOX6k5cKJwEc1HdilT71BWEu7J41gXIB2MRp+vxduPSwZJPWBxEzv4yH1wYLJGUHX4Q==}
+
+  minipass@7.1.3:
+    resolution: {integrity: sha512-tEBHqDnIoM/1rXME1zgka9g6Q2lcoCkxHLuc7ODJ5BxbP5d4c2Z5cGgtXAku59200Cx7diuHTOYfSBD8n6mm8A==}
+    engines: {node: '>=16 || 14 >=14.17'}
+
+  minizlib@3.1.0:
+    resolution: {integrity: sha512-KZxYo1BUkWD2TVFLr0MQoM8vUUigWD3LlD83a/75BqC+4qE0Hb1Vo5v1FgcfaNXvfXzr+5EhQ6ing/CaBijTlw==}
+    engines: {node: '>= 18'}
+
+  node-int64@0.4.0:
+    resolution: {integrity: sha512-O5lz91xSOeoXP6DulyHfllpq+Eg00MWitZIbtPfoSEvqIHdl5gfcY6hYzDWnj0qD5tz52PI08u9qUvSVeUBeHw==}
+
+  process-nextick-args@2.0.1:
+    resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
+
+  readable-stream@2.3.8:
+    resolution: {integrity: sha512-8p0AUk4XODgIewSi0l8Epjs+EVnWiK7NoDIEGU0HhE7+ZyY8D1IMY7odu5lRrFXGg71L15KG8QrPmum45RTtdA==}
+
+  safe-buffer@5.1.2:
+    resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
+
+  safer-buffer@2.1.2:
+    resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
+
+  string_decoder@1.1.1:
+    resolution: {integrity: sha512-n/ShnvDi6FHbbVfviro+WojiFzv+s8MPMHBczVePfUpDJLwoLT0ht1l4YwBCbi8pJAveEEdnkHyPyTP/mzRfwg==}
+
+  tar@7.5.20:
+    resolution: {integrity: sha512-9FcyK4PA6+WbzlTM9WhQm6vB5W7cP7dUiPsv1g7YDwEQnQ1CGpK3MGlKk/ITVWMk05kHZuBhmVhiv8LZoy/PFQ==}
+    engines: {node: '>=18'}
+
+  tslib@2.8.1:
+    resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
+
+  typescript@4.9.5:
+    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+
+  universalify@2.0.1:
+    resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
+    engines: {node: '>= 10.0.0'}
+
+  unzipper@0.12.5:
+    resolution: {integrity: sha512-tXYOi9R57Uj/2Z25SOs5RRSzq886MBQj2gY8dPL+xl/kv6s6SvByoKfAtvfVeEuhntWDgjd2o9p2lb4TVPAz0A==}
+
+  util-deprecate@1.0.2:
+    resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+
+  uuid-v4@0.1.0:
+    resolution: {integrity: sha512-m11RYDtowtAIihBXMoGajOEKpAXrKbpKlpmxqyztMYQNGSY5nZAZ/oYch/w2HNS1RMA4WLGcZvuD8/wFMuCEzA==}
+
+  yallist@5.0.0:
+    resolution: {integrity: sha512-YgvUTfwqyc7UXVMrB+SImsVYSmTS8X/tSrtdNZMImM+n7+QTriRXyXim0mBrTXNeqzVF0KWGgHPeiyViFFrNDw==}
+    engines: {node: '>=18'}
+
+snapshots:
+
+  '@isaacs/fs-minipass@4.0.1':
+    dependencies:
+      minipass: 7.1.3
+
+  '@types/node@17.0.45': {}
+
+  bluebird@3.7.2: {}
+
+  chownr@3.0.0: {}
+
+  core-util-is@1.0.3: {}
+
+  duplexer2@0.1.4:
+    dependencies:
+      readable-stream: 2.3.8
+
+  fs-extra@11.3.1:
+    dependencies:
+      graceful-fs: 4.2.11
+      jsonfile: 6.2.1
+      universalify: 2.0.1
+
+  graceful-fs@4.2.11: {}
+
+  iconv-lite@0.6.3:
+    dependencies:
+      safer-buffer: 2.1.2
+
+  inherits@2.0.4: {}
+
+  isarray@1.0.0: {}
+
+  jsonfile@6.2.1:
+    dependencies:
+      universalify: 2.0.1
+    optionalDependencies:
+      graceful-fs: 4.2.11
+
+  minipass@7.1.3: {}
+
+  minizlib@3.1.0:
+    dependencies:
+      minipass: 7.1.3
+
+  node-int64@0.4.0: {}
+
+  process-nextick-args@2.0.1: {}
+
+  readable-stream@2.3.8:
+    dependencies:
+      core-util-is: 1.0.3
+      inherits: 2.0.4
+      isarray: 1.0.0
+      process-nextick-args: 2.0.1
+      safe-buffer: 5.1.2
+      string_decoder: 1.1.1
+      util-deprecate: 1.0.2
+
+  safe-buffer@5.1.2: {}
+
+  safer-buffer@2.1.2: {}
+
+  string_decoder@1.1.1:
+    dependencies:
+      safe-buffer: 5.1.2
+
+  tar@7.5.20:
+    dependencies:
+      '@isaacs/fs-minipass': 4.0.1
+      chownr: 3.0.0
+      minipass: 7.1.3
+      minizlib: 3.1.0
+      yallist: 5.0.0
+
+  tslib@2.8.1: {}
+
+  typescript@4.9.5: {}
+
+  universalify@2.0.1: {}
+
+  unzipper@0.12.5:
+    dependencies:
+      bluebird: 3.7.2
+      duplexer2: 0.1.4
+      fs-extra: 11.3.1
+      graceful-fs: 4.2.11
+      node-int64: 0.4.0
+
+  util-deprecate@1.0.2: {}
+
+  uuid-v4@0.1.0: {}
+
+  yallist@5.0.0: {}

@@ -1,6 +1,6 @@
 {
     "name": "openjtalk.js",
-    "version": "3.0.1",
+    "version": "3.0.2",
     "description": "",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -21,13 +21,15 @@
     },
     "dependencies": {
         "iconv-lite": "^0.6.3",
+        "tar": "^7.5.20",
         "tslib": "^2.4.0",
         "typescript": "^4.6.3",
-        "uuid-v4": "^0.1.0",
-        "unzipper": "^0.12.3"
+        "unzipper": "^0.12.3",
+        "uuid-v4": "^0.1.0"
     },
     "homepage": "https://github.com/n-soukun/openjtalk.js#readme",
     "devDependencies": {
         "@types/node": "^17.0.25"
-    }
+    },
+    "packageManager": "pnpm@10.25.0+sha512.5e82639027af37cf832061bcc6d639c219634488e0f2baebe785028a793de7b525ffcd3f7ff574f5e9860654e098fe852ba8ac5dd5cefe1767d23a020a92f501"
 }
