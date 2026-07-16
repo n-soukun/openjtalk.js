@@ -1,5 +1,11 @@
 # openjtalk.js
 
+## 3.0.6
+
+### Patch Changes
+
+-   bd8d4c0: ワークフローに不足していた権限を追加
+
 ## 3.0.5
 
 ### Patch Changes
