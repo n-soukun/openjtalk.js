@@ -9,7 +9,7 @@
         "prepare": "npm run build",
         "test": "node test/talk",
         "install": "node install.js",
-        "ci:publish": "pnpm publish -r --no-git-checks --access=public"
+        "ci:publish": "pnpm publish -r"
     },
     "repository": {
         "type": "git",
